@@ -12,13 +12,13 @@
 
 ## Funcionalidades / Functionalities
 
-PT-BR
+#### PT-BR
 - Exibir informações do usuário, como nome, e-mail, telefone, CPF e endereço.
 - Editar informações do usuário.
 - Fazer upload de uma foto de perfil.
 - Buscar automaticamente o endereço completo a partir do CEP informado.
 
-EN
+#### EN
 - Displays user information like name, e-mail, phone number, ZIP code and address.
 - Edit user info.
 - Upload profile picture.
@@ -26,14 +26,14 @@ EN
 
 ## Estrutura do Projeto / Project Structure
 
-PT-BR
+#### PT-BR
 O projeto está estruturado da seguinte forma:
 
 - **HTML:** Contém a estrutura básica da página, incluindo os elementos de perfil do usuário e formulário de edição.
 - **CSS:** Estiliza a aparência da página, tornando-a responsiva e agradável visualmente.
 - **JavaScript:** Controla o comportamento dinâmico da página, como preenchimento de dados do usuário, edição de informações, upload de imagem e busca de endereço por CEP.
 
-EN
+#### EN
 The project is structured as follows:
 
 - **HTML:** Contains the basic structure of the page, including the user profile elements and edit form.
@@ -42,7 +42,7 @@ The project is structured as follows:
 
 ## Instruções de Uso / Usage Instructions
 
-PT-BR
+#### PT-BR
 Para utilizar o projeto, siga as seguintes instruções:
 
 1. Clone ou baixe o repositório para o seu ambiente local.
@@ -54,7 +54,7 @@ Para utilizar o projeto, siga as seguintes instruções:
 7. Para alterar a foto de perfil, clique no ícone da câmera e selecione a imagem desejada.
 8. Para buscar automaticamente o endereço a partir do CEP, preencha o campo de CEP e aguarde a busca ser concluída.
 
-EN
+#### EN
 To use the project, follow these instructions:
 
 1. Clone or download the repository to your local environment.
@@ -68,13 +68,13 @@ To use the project, follow these instructions:
 
 ## Observações / Notes
 
-PT-BR
+#### PT-BR
 - As informações exibidas são fictícias e podem ser substituídas por dados reais.
 - O projeto utiliza uma API fictícia para simular o salvamento de dados do usuário. Para integrá-lo com uma API real, é necessário fazer as devidas modificações no código JavaScript.
 - Certifique-se de possuir uma conexão com a internet para que a busca de endereço por CEP funcione corretamente.
 - A busca de endereeço utilizando o CEP somente funciona em países dentro da database dos Correios.
 
-EN
+#### EN
 - The displayed information is fictitious and can be replaced with real data.
 - The project uses a fictional API to simulate saving user data. To integrate it with a real API, you need to make the necessary modifications to the JavaScript code.
 - Make sure you have an internet connection for the ZIP code address search to work properly.
