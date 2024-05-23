@@ -1,10 +1,14 @@
-# Perfil do Usuário
+# Perfil do Usuário / User Profile
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/TakeSae/teste-tdzain)
 ![GitHub license](https://img.shields.io/github/license/TakeSae/teste-tdzain)
 ![GitHub stars](https://img.shields.io/github/stars/TakeSae/teste-tdzain?style=social)
 
+PT-BR
 Este é um projeto simples de perfil de usuário desenvolvido utilizando HTML, CSS e JavaScript. Ele permite visualizar e editar informações básicas de um usuário, como nome, e-mail, telefone, CPF e endereço.
+
+EN
+This is a simple user profile project developed using HTML, CSS, and JavaScript. It allows viewing and editing basic user information such as name, email, phone, CPF, and address.
 
 ## Funcionalidades / Functionalities
 
