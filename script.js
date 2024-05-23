@@ -1,26 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://api.ficticia.com/user';  // API fictícia
+    const apiUrl = 'https://api.ficticia.com/user';
     const userName = document.getElementById('user-name');
     const profileImg = document.getElementById('profile-img');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
+    const cpfInput = document.getElementById('cpf');
+    const cepInput = document.getElementById('cep');
     const editButton = document.getElementById('edit-button');
     let isEditing = false;
 
+    // Dados fictícios
+    const userData = {
+        name: 'João Silva',
+        email: 'joao.silva@example.com',
+        phone: '(11) 91234-5678',
+        cpf: '123.456.789-00',
+        cep: '01001-000',
+        profilePicture: 'assets/default.jpg'
+    };
+
     // Função para preencher os dados do usuário
-    async function fetchUserData() {
-        try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-            userName.textContent = data.name;
-            profileImg.src = data.profilePicture || 'default-profile.png';
-            nameInput.value = data.name;
-            emailInput.value = data.email;
-            phoneInput.value = data.phone;
-        } catch (error) {
-            console.error('Erro ao buscar dados do usuário:', error);
-        }
+    function fillUserData() {
+        userName.textContent = userData.name;
+        profileImg.src = userData.profilePicture || 'assets/default.jpg';
+        nameInput.value = userData.name;
+        emailInput.value = userData.email;
+        phoneInput.value = userData.phone;
+        cpfInput.value = userData.cpf;
+        cepInput.value = userData.cep;
     }
 
     // Função para habilitar/desabilitar edição
@@ -29,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         nameInput.disabled = !isEditing;
         emailInput.disabled = !isEditing;
         phoneInput.disabled = !isEditing;
+        cpfInput.disabled = !isEditing;
+        cepInput.disabled = !isEditing;
         editButton.textContent = isEditing ? 'Salvar' : 'Editar';
 
         if (!isEditing) {
@@ -41,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const updatedData = {
             name: nameInput.value,
             email: emailInput.value,
-            phone: phoneInput.value
+            phone: phoneInput.value,
+            cpf: cpfInput.value,
+            cep: cepInput.value
         };
 
         try {
@@ -72,6 +84,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Função para buscar endereço pelo CEP
+    async function fetchAddress(cep) {
+        try {
+            const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+            const data = await response.json();
+            if (data.erro) {
+                throw new Error('CEP não encontrado');
+            }
+            console.log('Endereço:', data); // Aqui você pode adicionar os dados do endereço ao formulário
+        } catch (error) {
+            console.error('Erro ao buscar endereço:', error);
+        }
+    }
+
+    // Adiciona máscara de CPF e CEP
+    VMasker(cpfInput).maskPattern('999.999.999-99');
+    VMasker(cepInput).maskPattern('99999-999');
+
+    // Evento de saída do campo CEP para buscar endereço
+    cepInput.addEventListener('blur', () => {
+        const cep = cepInput.value.replace(/\D/g, '');
+        if (cep.length === 8) {
+            fetchAddress(cep);
+        }
+    });
+
     editButton.addEventListener('click', toggleEdit);
-    fetchUserData();
+    fillUserData();
 });
