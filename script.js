@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const editButton = document.getElementById("edit-button");
   let isEditing = false; // Flag para indicar se o formulário está em modo de edição
 
-  // Dados fictícios do usuário
+  // Dados fictícios
   const userData = {
     name: "João Silva",
     email: "joao.silva@example.com",
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Função para preencher os dados do usuário na página
-  function fillUserData() {
+  function fillUserData(userData) {
     userName.textContent = userData.name;
     profileImg.src = userData.profilePicture || "assets/default.jpg";
     nameInput.value = userData.name;
@@ -119,6 +119,35 @@ document.addEventListener("DOMContentLoaded", () => {
   VMasker(cpfInput).maskPattern("999.999.999-99");
   VMasker(cepInput).maskPattern("99999-999");
 
+  // Função para obter os dados do usuário
+  async function getUserData() {
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("Erro ao obter dados do usuário");
+      }
+      const userData = await response.json();
+      return userData;
+    } catch (error) {
+      console.error("Erro ao obter dados do usuário:", error);
+      // Em caso de erro, retorna os dados fictícios
+      return userData;
+    }
+  }
+
+  // Preenche os dados do usuário ao carregar a página
+  getUserData()
+    .then((userData) => {
+      if (userData) {
+        fillUserData(userData);
+      }
+    })
+    .catch((error) => {
+      console.error("Erro ao obter os dados do usuário:", error);
+      // Em caso de erro, preenche os dados com os dados fictícios
+      fillUserData(userData);
+    });
+
   // Evento acionado quando o campo de CEP perde o foco, disparando a busca de endereço
   cepInput.addEventListener("blur", () => {
     const cep = cepInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos do CEP
@@ -131,6 +160,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento acionado ao clicar no botão de edição, alternando entre os modos de edição e visualização
   editButton.addEventListener("click", toggleEdit);
 
-  // Preenche os dados do usuário ao carregar a página
-  fillUserData();
 });
