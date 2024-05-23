@@ -40,6 +40,10 @@ Para utilizar o projeto, siga as seguintes instruções:
 - O projeto utiliza uma API fictícia para simular o salvamento de dados do usuário. Para integrá-lo com uma API real, é necessário fazer as devidas modificações no código JavaScript.
 - Certifique-se de possuir uma conexão com a internet para que a busca de endereço por CEP funcione corretamente.
 
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+
 ## Tecnologias Utilizadas
 
 - HTML
@@ -51,4 +55,3 @@ Para utilizar o projeto, siga as seguintes instruções:
 ## Autor
 
 Este projeto foi desenvolvido por Guilherme Takeshi Saeki Abreu e faz parte de um exercício prático para desenvolvimento web.
-
