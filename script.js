@@ -1,5 +1,9 @@
+// Este evento é acionado quando o DOM está completamente carregado
 document.addEventListener("DOMContentLoaded", () => {
-  const apiUrl = "https://api.ficticia.com/user"; // API fictícia
+  // URL da API fictícia para o usuário
+  const apiUrl = "https://api.ficticia.com/user";
+
+  // Elementos da página
   const userName = document.getElementById("user-name");
   const profileImg = document.getElementById("profile-img");
   const nameInput = document.getElementById("name");
@@ -14,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const addressFields = document.getElementById("address-fields");
   const errorMessage = document.getElementById("error-message");
   const editButton = document.getElementById("edit-button");
-  let isEditing = false;
+  let isEditing = false; // Flag para indicar se o formulário está em modo de edição
 
-  // Dados fictícios
+  // Dados fictícios do usuário
   const userData = {
     name: "João Silva",
     email: "joao.silva@example.com",
@@ -26,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     profilePicture: "assets/default.jpg",
   };
 
-  // Função para preencher os dados do usuário
+  // Função para preencher os dados do usuário na página
   function fillUserData() {
     userName.textContent = userData.name;
     profileImg.src = userData.profilePicture || "assets/default.jpg";
@@ -37,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cepInput.value = userData.cep;
   }
 
-  // Função para habilitar/desabilitar edição
+  // Função para habilitar ou desabilitar o modo de edição
   function toggleEdit() {
     isEditing = !isEditing;
     nameInput.disabled = !isEditing;
@@ -45,10 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     phoneInput.disabled = !isEditing;
     cpfInput.disabled = !isEditing;
     cepInput.disabled = !isEditing;
-    editButton.textContent = isEditing ? "Salvar" : "Editar";
+    editButton.textContent = isEditing ? "Salvar" : "Editar"; // Alterna o texto do botão entre "Salvar" e "Editar"
 
     if (!isEditing) {
-      saveUserData();
+      saveUserData(); // Se o modo de edição estiver sendo desativado, salva os dados do usuário
     }
   }
 
@@ -78,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Função para fazer upload da imagem
+  // Função para fazer upload da imagem do perfil do usuário
   function uploadImage(event) {
     const file = event.target.files[0];
     if (file) {
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Função para buscar endereço pelo CEP
+  // Função para buscar endereço pelo CEP utilizando a API ViaCEP
   async function fetchAddress(cep) {
     try {
       const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
@@ -102,27 +106,31 @@ document.addEventListener("DOMContentLoaded", () => {
       neighborhoodInput.value = data.bairro;
       cityInput.value = data.localidade;
       stateInput.value = data.uf;
-      addressFields.style.display = "block";
-      errorMessage.style.display = "none";
+      addressFields.style.display = "block"; // Exibe os campos de endereço na página
+      errorMessage.style.display = "none"; // Esconde a mensagem de erro, se estiver sendo exibida
     } catch (error) {
       console.error("Erro ao buscar endereço:", error);
-      addressFields.style.display = "none";
-      errorMessage.style.display = "block";
+      addressFields.style.display = "none"; // Esconde os campos de endereço na página
+      errorMessage.style.display = "block"; // Exibe a mensagem de erro na página
     }
   }
 
-  // Adiciona máscara de CPF e CEP
+  // Adiciona máscaras nos campos de CPF e CEP utilizando a biblioteca Vanilla Masker
   VMasker(cpfInput).maskPattern("999.999.999-99");
   VMasker(cepInput).maskPattern("99999-999");
 
-  // Evento de saída do campo CEP para buscar endereço
+  // Evento acionado quando o campo de CEP perde o foco, disparando a busca de endereço
   cepInput.addEventListener("blur", () => {
-    const cep = cepInput.value.replace(/\D/g, "");
+    const cep = cepInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos do CEP
     if (cep.length === 8) {
-      fetchAddress(cep);
+      // Verifica se o CEP possui o tamanho correto
+      fetchAddress(cep); // Busca o endereço correspondente ao CEP informado
     }
   });
 
+  // Evento acionado ao clicar no botão de edição, alternando entre os modos de edição e visualização
   editButton.addEventListener("click", toggleEdit);
+
+  // Preenche os dados do usuário ao carregar a página
   fillUserData();
 });

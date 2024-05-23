@@ -1,5 +1,9 @@
 # Perfil do Usuário
 
+![GitHub last commit](https://img.shields.io/github/last-commit/TakeSae/teste-tdzain)
+![GitHub license](https://img.shields.io/github/license/TakeSae/teste-tdzain)
+![GitHub stars](https://img.shields.io/github/stars/TakeSae/teste-tdzain?style=social)
+
 Este é um projeto simples de perfil de usuário desenvolvido utilizando HTML, CSS e JavaScript. Ele permite visualizar e editar informações básicas de um usuário, como nome, e-mail, telefone, CPF e endereço.
 
 ## Funcionalidades
@@ -46,5 +50,5 @@ Para utilizar o projeto, siga as seguintes instruções:
 
 ## Autor
 
-Este projeto foi desenvolvido por [Guilherme Takeshi Saeki Abreu] e faz parte de um exercício prático para desenvolvimento web.
+Este projeto foi desenvolvido por Guilherme Takeshi Saeki Abreu e faz parte de um exercício prático para desenvolvimento web.
 

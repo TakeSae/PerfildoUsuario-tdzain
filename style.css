@@ -1,135 +1,135 @@
-/* Reset básico */
+/* Reset básico para remover margens e preenchimentos padrão */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header {
-  background-color: #a578fa;
-  color: white;
-  padding: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  width: 100%;
-  max-width: 600px;
-}
-
-.profile-section {
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.profile-picture {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.profile-picture img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-
-#upload-button {
-  display: none;
-}
-
-.upload-label {
-  position: absolute;
-  bottom: 10px;
-  right: 200px;
-  background-color: #a578fa;
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white;
-}
-
-.upload-label i {
-  font-size: 16px;
-}
-
-.profile-info {
-  width: 100%;
-}
-
-.form-group {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.form-group label {
-  width: 100px;
-}
-
-.form-group input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#edit-button {
-  background-color: #a578fa;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-
-#edit-button:hover {
-  background-color: #a578fa;
-}
-
-/* Estilos responsivos */
-@media (max-width: 600px) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para o corpo da página */
+  body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #ffffff; /* Define a cor de fundo */
+    display: flex; /* Torna o corpo flexível para alinhamento vertical */
+    flex-direction: column; /* Define a direção do flex como coluna */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+  }
+  
+  /* Estilo para o cabeçalho */
+  .header {
+    background-color: #a578fa; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    width: 100%; /* Largura total */
+    text-align: center; /* Alinhamento do texto */
+  }
+  
+  /* Estilo para o conteúdo principal */
   .main-content {
-    padding: 10px;
+    display: flex; /* Torna o conteúdo principal flexível */
+    flex-direction: column; /* Define a direção do flex como coluna */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    margin: 20px; /* Margem externa */
+    width: 100%; /* Largura total */
+    max-width: 600px; /* Largura máxima */
   }
-
+  
+  /* Estilo para a seção de perfil */
+  .profile-section {
+    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Raio do canto */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 100%; /* Largura total */
+  }
+  
+  /* Estilo para a foto do perfil */
+  .profile-picture {
+    position: relative; /* Posição relativa */
+    display: flex; /* Torna a foto flexível */
+    justify-content: center; /* Alinhamento horizontal no centro */
+    margin-bottom: 20px; /* Margem inferior */
+  }
+  
   .profile-picture img {
-    width: 120px;
-    height: 120px;
+    border-radius: 50%; /* Borda arredondada para a imagem */
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
   }
-
+  
+  /* Estilo para o botão de upload de imagem */
+  #upload-button {
+    display: none; /* Oculta o botão de upload */
+  }
+  
   .upload-label {
-    bottom: 5px;
-    right: calc(
-      (100vw - 200px) / 2
-    );
-    padding: 8px;
+    position: absolute; /* Posição absoluta */
+    bottom: 10px; /* Distância da parte inferior */
+    right: 200px; /* Distância da direita */
+    background-color: #a578fa; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 50%; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    display: flex; /* Torna o elemento flexível */
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+    border: 2px solid white; /* Borda branca */
   }
-
+  
+  .upload-label i {
+    font-size: 16px; /* Tamanho do ícone */
+  }
+  
+  /* Estilo para as informações do perfil */
+  .profile-info {
+    width: 100%; /* Largura total */
+  }
+  
+  /* Estilo para os grupos de formulário */
+  .form-group {
+    margin-bottom: 15px; /* Margem inferior */
+    display: flex; /* Torna o grupo flexível */
+    align-items: center; /* Alinhamento vertical */
+  }
+  
+  .form-group label {
+    width: 100px; /* Largura da etiqueta */
+  }
+  
+  .form-group input {
+    flex: 1; /* Ocupa todo o espaço restante */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 4px; /* Borda arredondada */
+  }
+  
+  /* Estilo para o botão de edição */
   #edit-button {
-    padding: 10px;
+    background-color: #a578fa; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    width: 100%; /* Largura total */
   }
-}
+  
+  #edit-button:hover {
+    background-color: #a578fa; /* Cor de fundo ao passar o mouse */
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    .main-content {
+      padding: 10px; /* Espaçamento interno reduzido */
+    }
+  
+    .profile-picture img {
+      width: 120px; /* Largura da imagem reduzida */
+      height: 120px; /* Altura da imagem reduzida */
+    }
+  
+    .upload-label {
+     
+  
