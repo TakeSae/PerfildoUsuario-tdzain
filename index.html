@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="user-name">Nome do Usuário</h1>
+    </header>
+    <main>
+        <section class="profile-picture">
+            <img id="profile-img" src="default-profile.png" alt="Foto do Perfil">
+        </section>
+        <section class="user-info">
+            <div>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" disabled>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" disabled>
+            </div>
+            <div>
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" disabled>
+            </div>
+            <button id="edit-button">Editar</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
