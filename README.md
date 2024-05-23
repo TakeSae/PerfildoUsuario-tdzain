@@ -21,12 +21,12 @@ Este projeto é uma página de perfil de usuário que exibe informações básic
 
 1. Clone este repositório:
     ```sh
-    git clone https://github.com/[add later]
+    git clone https://github.com/TakeSae/teste-tdzain
     ```
 
 2. Navegue até o diretório do projeto:
     ```sh
-    cd seu-repositorio
+    cd [seu-repositorio]
     ```
 
 3. Abra o arquivo `index.html` em seu navegador preferido.
@@ -38,11 +38,3 @@ Este projeto é uma página de perfil de usuário que exibe informações básic
 ## Hospedagem
 
 O projeto está hospedado no GitHub Pages. Você pode acessá-lo [aqui](https://github.com/TakeSae?tab=repositories).
-
-## Contribuição
-
-Sinta-se à vontade para contribuir com este projeto. Faça um fork, crie um branch, e envie um pull request com suas melhorias.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
