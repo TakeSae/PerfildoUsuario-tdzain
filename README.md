@@ -1,40 +1,44 @@
-# Página de Perfil do Usuário
+Perfil do Usuário
 
-## Descrição
+Este é um projeto simples de perfil de usuário desenvolvido utilizando HTML, CSS e JavaScript. 
+Ele permite visualizar e editar informações básicas de um usuário, como nome, e-mail, telefone, CPF e endereço.
 
-Este projeto é uma página de perfil de usuário que exibe informações básicas e permite a edição dessas informações. A página interage com uma API REST fictícia para obter e enviar dados.
+Funcionalidades:
+- Exibir informações do usuário, como nome, e-mail, telefone, CPF e endereço.
+- Editar informações do usuário.
+- Fazer upload de uma foto de perfil.
+- Buscar automaticamente o endereço completo a partir do CEP informado.
 
-## Estrutura do Projeto
+Estrutura do Projeto:
+O projeto está estruturado da seguinte forma:
 
-- `index.html`: Estrutura HTML da página.
-- `style.css`: Estilos CSS para a página.
-- `script.js`: Funcionalidade interativa com JavaScript.
-- `README.md`: Descrição do projeto.
+- HTML: Contém a estrutura básica da página, incluindo os elementos de perfil do usuário e formulário de edição.
+- CSS: Estiliza a aparência da página, tornando-a responsiva e agradável visualmente.
+- JavaScript: Controla o comportamento dinâmico da página, como preenchimento de dados do usuário, edição de informações, upload de imagem e busca de endereço por CEP.
 
-## Funcionalidades
+Instruções de Uso:
+Para utilizar o projeto, siga as seguintes instruções:
 
-- Exibição de foto e informações do usuário.
-- Edição das informações do usuário.
-- Envio de dados atualizados para a API REST fictícia.
+- Clone ou baixe o repositório para o seu ambiente local.
+- Abra o arquivo index.html em um navegador da web.
+- Visualize as informações do usuário.
+- Clique no botão "Editar" para habilitar a edição das informações.
+- Faça as alterações desejadas nos campos.
+- Clique novamente no botão "Editar" para salvar as alterações.
+- Para alterar a foto de perfil, clique no ícone da câmera e selecione a imagem desejada.
+- Para buscar automaticamente o endereço a partir do CEP, preencha o campo de CEP e aguarde a busca ser concluída.
 
-## Como Rodar o Projeto Localmente
+Observações:
+As informações exibidas são fictícias e podem ser substituídas por dados reais.
+O projeto utiliza uma API fictícia para simular o salvamento de dados do usuário. Para integrá-lo com uma API real, é necessário fazer as devidas modificações no código JavaScript.
+Certifique-se de possuir uma conexão com a internet para que a busca de endereço por CEP funcione corretamente.
 
-1. Clone este repositório:
-    ```sh
-    git clone https://github.com/TakeSae/teste-tdzain
-    ```
+Tecnologias Utilizadas:
+- HTML
+- CSS
+- JavaScript
+- Vanilla Masker - Para aplicar máscaras nos campos de CPF e CEP.
+- Font Awesome - Para ícones.
 
-2. Navegue até o diretório do projeto:
-    ```sh
-    cd [seu-repositorio]
-    ```
-
-3. Abra o arquivo `index.html` em seu navegador preferido.
-
-## Dependências
-
-- Nenhuma dependência externa. Apenas HTML, CSS, e JavaScript puro.
-
-## Hospedagem
-
-O projeto está hospedado no GitHub Pages. Você pode acessá-lo [aqui](https://github.com/TakeSae?tab=repositories).
+Autor:
+Este projeto foi desenvolvido por TakeSae e faz parte de um exercício prático para desenvolvimento web.
