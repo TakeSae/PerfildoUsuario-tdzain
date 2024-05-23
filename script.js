@@ -60,6 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Função para fazer upload da imagem
+    function uploadImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                profileImg.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
     editButton.addEventListener('click', toggleEdit);
     fetchUserData();
 });

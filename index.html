@@ -5,29 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuário</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1 id="user-name">Nome do Usuário</h1>
     </header>
-    <main>
-        <section class="profile-picture">
-            <img id="profile-img" src="default-profile.png" alt="Foto do Perfil">
-        </section>
-        <section class="user-info">
-            <div>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" disabled>
+    <main class="main-content">
+        <section class="profile-section">
+            <div class="profile-picture">
+                <img id="profile-img" src="assets/default.jpg" alt="Foto do Perfil">
+                <input type="file" id="upload-button" accept="image/*" onchange="uploadImage(event)">
+                <label for="upload-button" class="upload-label"><i class="fas fa-camera"></i></label>
             </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" disabled>
+            <div class="profile-info">
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone:</label>
+                        <input type="tel" id="phone" name="phone" disabled>
+                    </div>
+                    <button type="button" id="edit-button">Editar</button>
+                </form>
             </div>
-            <div>
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" disabled>
-            </div>
-            <button id="edit-button">Editar</button>
         </section>
     </main>
     <script src="script.js"></script>

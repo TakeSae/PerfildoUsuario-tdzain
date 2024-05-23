@@ -1,13 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-header {
+.header {
     background-color: #4CAF50;
     color: white;
     padding: 20px;
@@ -15,50 +21,112 @@ header {
     text-align: center;
 }
 
-main {
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.profile-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.profile-picture {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .profile-picture img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    object-fit: cover;
 }
 
-.user-info {
-    margin-top: 20px;
+#upload-button {
+    display: none;
 }
 
-.user-info div {
-    margin-bottom: 10px;
+.upload-label {
+    position: absolute;
+    bottom: 10px;
+    right: 30px; /* Ajustado para mover o ícone mais para a esquerda */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
 }
 
-.user-info label {
+.upload-label i {
+    font-size: 16px;
+}
+
+.profile-info {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
+    margin-bottom: 5px;
 }
 
-.user-info input {
-    padding: 8px;
-    width: 200px;
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #edit-button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    width: 100%;
 }
 
 #edit-button:hover {
     background-color: #45a049;
 }
 
+/* Estilos responsivos */
 @media (max-width: 600px) {
-    .user-info input {
-        width: 100%;
+    .main-content {
+        padding: 10px;
+    }
+
+    .profile-picture img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .upload-label {
+        bottom: 5px;
+        right: 20px; /* Ajustado para responsividade */
+        padding: 8px;
+    }
+
+    #edit-button {
+        padding: 10px;
     }
 }
